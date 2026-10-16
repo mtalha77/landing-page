@@ -3,22 +3,23 @@ import { BuildOptions } from "@/components/build-options";
 import { FitFrame } from "@/components/fit-frame";
 import { SiteHeader } from "@/components/site-header";
 
+const background = [
+  "radial-gradient(980px 620px at 92% -8%, rgba(176, 214, 206, 0.95), transparent 58%)",
+  "radial-gradient(820px 560px at 4% -6%, rgba(168, 188, 214, 0.85), transparent 56%)",
+  "radial-gradient(700px 420px at 50% 120%, rgba(255,255,255,0.72), transparent 60%)",
+  "linear-gradient(180deg, #c3cedb 0%, #d4dce6 30%, #e4e8ec 68%, #eceeee 100%)",
+].join(", ");
+
 export default function Home() {
   return (
-    <div className="relative h-full overflow-hidden bg-[#d5dde6] text-[#141414]">
+    <div className="h-dvh overflow-y-auto bg-[#d5dde6] text-[#141414]">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage: [
-            "radial-gradient(980px 620px at 92% -8%, rgba(176, 214, 206, 0.95), transparent 58%)",
-            "radial-gradient(820px 560px at 4% -6%, rgba(168, 188, 214, 0.85), transparent 56%)",
-            "radial-gradient(700px 420px at 50% 120%, rgba(255,255,255,0.72), transparent 60%)",
-            "linear-gradient(180deg, #c3cedb 0%, #d4dce6 30%, #e4e8ec 68%, #eceeee 100%)",
-          ].join(", "),
-        }}
+        className="pointer-events-none fixed inset-0"
+        style={{ backgroundImage: background }}
       />
 
+      <div className="relative h-dvh overflow-hidden">
       <SiteHeader />
 
       <main className="relative z-10 h-full min-h-0 overflow-hidden">
@@ -83,6 +84,46 @@ export default function Home() {
         </figure>
         </FitFrame>
       </main>
+      </div>
+
+      <section id="brands" className="relative bg-[#555555] px-6 py-10 sm:px-8">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
+          <p className="flex shrink-0 items-center gap-3 text-[13px] font-semibold tracking-[0.18em] text-white uppercase">
+            <span aria-hidden className="block w-14 border-t border-white" />
+            <span className="size-1.5 rounded-full bg-[#1AA56E]" />
+            Verified by
+            <span aria-hidden className="ml-2 block h-8 border-l border-white" />
+          </p>
+          <Image
+            src="/chamber-of-commerce.png"
+            alt="Chamber of Commerce"
+            width={1024}
+            height={1024}
+            className="h-20 w-auto sm:h-24"
+          />
+          <Image
+            src="/782baafc4219f88f3cd2d796de2fcaf363377cd6.png"
+            alt="BBB Accredited Business"
+            width={300}
+            height={300}
+            className="h-20 w-auto sm:h-24"
+          />
+          <Image
+            src="/Group-2085661036.png"
+            alt="ISO 27001 certified"
+            width={269}
+            height={258}
+            className="h-20 w-auto sm:h-24"
+          />
+          <Image
+            src="/9240ad696721583156e731f724460eb4b6b351a4-scaled.png"
+            alt="ScamAdviser badge"
+            width={2560}
+            height={2560}
+            className="h-20 w-auto sm:h-24"
+          />
+        </div>
+      </section>
     </div>
   );
 }

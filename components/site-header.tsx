@@ -69,7 +69,7 @@ export function SiteHeader() {
 
           <a
             href="#book"
-            className="inline-flex h-11 cursor-pointer items-center rounded-full bg-black px-5 text-[15px] font-medium text-white transition-colors hover:bg-[#222]"
+            className="inline-flex h-11 cursor-pointer items-center rounded-full bg-[#126E5A] px-5 text-[15px] font-medium text-white transition-colors hover:bg-[#0E5A49]"
           >
             Book a call
           </a>

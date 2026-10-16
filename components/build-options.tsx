@@ -51,7 +51,7 @@ function ArrowRight({ light = false }: { light?: boolean }) {
 }
 
 const fieldClass =
-  "h-12 w-full rounded-[14px] border border-[#E4E4E4] bg-white px-4 text-[16px] text-[#1a1a1a] outline-none transition duration-200 placeholder:text-[#C8C8C8] focus:border-[#111] focus:shadow-[0_0_0_3px_rgba(0,0,0,0.05)]";
+  "h-12 w-full rounded-[14px] border border-[#E4E4E4] bg-white px-4 text-[16px] text-[#1a1a1a] outline-none transition duration-200 placeholder:text-[#C8C8C8] focus:border-[#126E5A] focus:shadow-[0_0_0_3px_rgba(18,110,90,0.12)]";
 
 export function BuildOptions() {
   const router = useRouter();
@@ -164,7 +164,7 @@ export function BuildOptions() {
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="scope-title"
-                className={`relative max-h-[92vh] w-full max-w-[680px] overflow-y-auto rounded-[28px] bg-white px-6 py-7 text-left shadow-2xl transition duration-300 sm:px-8 sm:py-8 ${
+                className={`relative max-h-[92vh] w-full max-w-[680px] overflow-y-auto rounded-[28px] border border-white bg-white px-6 py-7 text-left shadow-[0_24px_60px_-24px_rgba(16,70,58,0.45)] transition duration-300 sm:px-8 sm:py-8 ${
                   active
                     ? "translate-y-0 scale-100 opacity-100"
                     : "translate-y-4 scale-[0.96] opacity-0"
@@ -175,7 +175,7 @@ export function BuildOptions() {
                   type="button"
                   onClick={close}
                   aria-label="Close"
-                  className="absolute top-5 right-5 z-10 flex size-9 cursor-pointer items-center justify-center rounded-full border border-[#ECECEC] text-[#666] transition hover:rotate-90 hover:bg-[#F7F7F7]"
+                  className="absolute top-5 right-5 z-10 flex size-9 cursor-pointer items-center justify-center rounded-full border border-[#E4E4E4] text-[#666] transition hover:rotate-90 hover:bg-[#FAFAFA]"
                 >
                   <svg viewBox="0 0 20 20" className="size-4" aria-hidden>
                     <path
@@ -202,11 +202,11 @@ export function BuildOptions() {
                         >
                           Get your project scoped this week
                         </h2>
-                        <span className="shrink-0 text-[20px] font-medium text-[#C4C4C4]">
+                        <span className="shrink-0 text-[20px] font-medium text-[#126E5A]">
                           {step} / 3
                         </span>
                       </div>
-                      <p className="mt-2 text-[16px] text-[#9AA0A6]">
+                      <p className="mt-2 text-[16px] text-[#5E6772]">
                         Talk to a senior product lead. Pick a time in 60
                         seconds.
                       </p>
@@ -215,10 +215,10 @@ export function BuildOptions() {
                         {[1, 2, 3].map((bar) => (
                           <span
                             key={bar}
-                            className="h-[5px] flex-1 overflow-hidden rounded-full bg-[#E6E6E6]"
+                            className="h-[5px] flex-1 overflow-hidden rounded-full bg-[#E7F3EF]"
                           >
                             <span
-                              className={`block h-full rounded-full bg-black transition-transform duration-500 ${
+                              className={`block h-full rounded-full bg-[#126E5A] transition-transform duration-500 ${
                                 bar <= step ? "translate-x-0" : "-translate-x-full"
                               }`}
                             />
@@ -228,17 +228,17 @@ export function BuildOptions() {
 
                       {step === 2 ? (
                         <>
-                          <h3 className="font-heading mt-6 text-[18px] font-bold text-[#161616]">
+                          <h3 className="font-heading mt-6 text-[18px] font-bold tracking-[-0.01em] text-[#1a1a1a]">
                             What is your budget?
                           </h3>
-                          <div className="mt-3 flex flex-col gap-3">
+                          <div className="mt-3 flex flex-col gap-2.5">
                             {budgetOptions.map((label, index) => (
                               <button
                                 key={label}
                                 type="button"
                                 onClick={() => changeStep(3)}
                                 style={{ transitionDelay: `${index * 30}ms` }}
-                                className="flex h-[58px] cursor-pointer items-center justify-between rounded-[14px] border border-[#E6E6E6] px-5 text-left text-[17px] text-[#1a1a1a] transition duration-200 hover:translate-x-1 hover:border-[#D0D0D0] hover:bg-[#FAFAFA]"
+                                className="flex h-12 cursor-pointer items-center justify-between gap-3 rounded-[10px] border border-[#E4E4E4] bg-white px-5 text-left text-[17px] font-medium text-[#2C2C2C] transition duration-200 hover:-translate-y-0.5 hover:border-[#D0D0D0] hover:bg-[#FAFAFA]"
                               >
                                 <span>{label}</span>
                                 <ArrowRight />
@@ -248,7 +248,7 @@ export function BuildOptions() {
                           <button
                             type="button"
                             onClick={back}
-                            className="mt-6 cursor-pointer rounded-[12px] border border-[#E4E4E4] px-5 py-2.5 text-[15px] text-[#222] transition hover:bg-[#FAFAFA]"
+                            className="mt-6 cursor-pointer rounded-[10px] border border-[#E4E4E4] bg-white px-5 py-2.5 text-[15px] font-medium text-[#2C2C2C] transition hover:border-[#D0D0D0] hover:bg-[#FAFAFA]"
                           >
                             Back
                           </button>
@@ -351,13 +351,13 @@ export function BuildOptions() {
                             <button
                               type="button"
                               onClick={back}
-                              className="cursor-pointer rounded-[12px] border border-[#E4E4E4] px-5 py-3 text-[15px] text-[#222] transition hover:bg-[#FAFAFA]"
+                              className="cursor-pointer rounded-[10px] border border-[#E4E4E4] bg-white px-5 py-3 text-[15px] font-medium text-[#2C2C2C] transition hover:border-[#D0D0D0] hover:bg-[#FAFAFA]"
                             >
                               Back
                             </button>
                             <button
                               type="submit"
-                              className="flex h-[52px] flex-1 cursor-pointer items-center justify-center gap-2 rounded-[14px] bg-black text-[16px] font-medium text-white transition hover:bg-[#222]"
+                              className="flex h-[52px] flex-1 cursor-pointer items-center justify-center gap-2 rounded-[14px] bg-[#126E5A] text-[16px] font-medium text-white transition hover:bg-[#0E5A49]"
                             >
                               Book my call
                               <ArrowRight light />
