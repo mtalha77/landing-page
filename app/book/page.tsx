@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { SCHEDULER_URL } from "@/lib/scheduler";
 
 export const metadata: Metadata = {
@@ -17,7 +19,19 @@ const background = [
 export default function BookPage() {
   return (
     <div className="h-dvh overflow-y-auto text-[#141414]" style={{ background }}>
-      <main className="mx-auto flex w-full max-w-[920px] flex-col items-center px-5 py-16 text-center sm:py-20">
+      <header className="mx-auto flex max-w-7xl items-center px-6 py-5 sm:px-8 sm:py-6">
+        <Link href="/">
+          <Image
+            src="/logo-mark.png"
+            alt="rankorbit.dev"
+            width={3580}
+            height={420}
+            priority
+            className="h-7 w-auto sm:h-8"
+          />
+        </Link>
+      </header>
+      <main className="mx-auto flex w-full max-w-[920px] flex-col items-center px-5 pb-16 text-center">
         <h1 className="font-heading text-[32px] leading-none font-black tracking-[-0.03em] text-[#111] sm:text-[40px]">
           Book your call
         </h1>
