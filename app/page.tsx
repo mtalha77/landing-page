@@ -1,68 +1,87 @@
 import Image from "next/image";
+import { BuildOptions } from "@/components/build-options";
+import { FitFrame } from "@/components/fit-frame";
+import { SiteHeader } from "@/components/site-header";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="relative h-full overflow-hidden bg-[#d5dde6] text-[#141414]">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage: [
+            "radial-gradient(980px 620px at 92% -8%, rgba(176, 214, 206, 0.95), transparent 58%)",
+            "radial-gradient(820px 560px at 4% -6%, rgba(168, 188, 214, 0.85), transparent 56%)",
+            "radial-gradient(700px 420px at 50% 120%, rgba(255,255,255,0.72), transparent 60%)",
+            "linear-gradient(180deg, #c3cedb 0%, #d4dce6 30%, #e4e8ec 68%, #eceeee 100%)",
+          ].join(", "),
+        }}
+      />
+
+      <SiteHeader />
+
+      <main className="relative z-10 h-full min-h-0 overflow-hidden">
+        <FitFrame>
+        <p className="mb-4 flex items-center gap-2 text-[13px] font-semibold tracking-[0.18em] text-[#126E5A] uppercase">
+          <span className="size-1.5 rounded-full bg-[#1AA56E]" />
+          Custom software development
+        </p>
+
+        <h1 className="font-heading text-[40px] leading-[1.08] font-black tracking-[-0.035em] text-[#101114] sm:text-[56px]">
+          Get <span className="text-[#126E5A]">custom software</span> designed,
+          built
+          <br className="hidden sm:block" /> and launched by one senior team
+        </h1>
+
+        <p className="mt-4 max-w-[920px] text-[18px] leading-[1.5] font-medium text-[#2C333A] sm:text-[20px]">
+          Go from idea to live software in weeks. Custom apps, SaaS platforms
+          and
+          <br className="hidden sm:block" /> enterprise software from the squad
+          behind 200+ shipped products.
+        </p>
+
+        <div className="relative z-0 mt-6 w-full max-w-[720px]">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -inset-x-3 -bottom-4 top-8 z-0 rounded-[32px] bg-[radial-gradient(ellipse_at_center,rgba(110,186,166,0.55),transparent_70%)] blur-md"
+          />
+        <section className="relative z-10 w-full rounded-[22px] border border-white bg-white px-5 py-8 shadow-[0_16px_36px_-18px_rgba(16,70,58,0.28)] sm:px-7 sm:py-10">
+          <h2 className="font-heading text-[22px] font-bold tracking-[-0.02em] text-[#161616] sm:text-[26px]">
+            Get your project scoped this week
+          </h2>
+          <p className="mt-2 text-[15px] text-[#8A919A] sm:text-base">
+            Talk to a senior product lead. Pick a time in 60 seconds.
           </p>
+
+          <h3 className="font-heading mt-5 text-[18px] font-bold tracking-[-0.01em] text-[#1a1a1a]">
+            What do you want to build?
+          </h3>
+
+          <BuildOptions />
+
+          <p className="mt-3.5 text-sm text-[#A7ADB4]">Takes under a minute.</p>
+        </section>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        <figure className="mt-5 flex max-w-[520px] flex-col items-center">
+          <Image
+            src="/avatar-rj.png"
+            alt="Rickey Jasper"
+            width={256}
+            height={256}
+            className="size-14 rounded-full object-cover"
+          />
+          <blockquote className="mt-3 max-w-[560px] text-base leading-[1.5] text-[#3C4148]">
+            “We could rely on them to handle their part, which allowed us to
+            focus on growing the business instead of constantly managing the
+            build.”
+          </blockquote>
+          <figcaption className="mt-2.5 text-[15px] font-bold tracking-[-0.01em] text-[#1a1a1a]">
+            Rickey Jasper, Co-Founder, ALTR House
+          </figcaption>
+        </figure>
+        </FitFrame>
       </main>
     </div>
   );
